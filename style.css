@@ -1,0 +1,68 @@
+@font-face {
+    font-family: "Begum Medium";
+    src: url(fonts/begum-medium.otf);
+}
+
+@font-face {
+    font-family: "Mozaic GEO";
+    src: url(fonts/MozaicGEO-Medium.otf);
+}
+
+@font-face {
+    font-family: "Proxima Sera";
+    src: url(fonts/proximasera-regular.otf);
+}
+
+:root {
+    --primary-green: #005030;
+    --primary-gold: #FFB81C;
+    --secondary-avocado: #A4D65E;
+    --poly-gradient: linear-gradient(to right, var(--primary-gold), var(--secondary-avocado));
+}
+
+* {
+    color: var(--primary-green);
+    /* border: 2px solid red; */
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    font-family: "Mozaic GEO";
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 8px 64px;
+    background-image: var(--poly-gradient);
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.logo {
+    font-family: 'Begum Medium';
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.logo img {
+    width: 64px;
+}
+
+.logo div:first-of-type {
+    margin-left: -6px;
+}
+
+.logo div {
+    margin: 2px;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
