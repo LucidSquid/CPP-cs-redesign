@@ -1,2 +1,2 @@
 # CPP-cs-redesign
-This is a visual redesign for Cal Poly Pomona's computer science department site.
+[This](https://lucidsquid.github.io/CPP-cs-redesign/) is a visual redesign for Cal Poly Pomona's [computer science department site](https://www.cpp.edu/sci/computer-science/index.shtml).
