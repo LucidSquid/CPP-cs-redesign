@@ -39,8 +39,26 @@ nav {
     background-image: var(--poly-gradient);
 }
 
-nav a {
+a {
     text-decoration: none;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-link::after {
+    content: "";
+    height: 4px;
+    width: 0%;
+    background: var(--primary-green);
+    transition: width .2s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .logo {
@@ -49,6 +67,10 @@ nav a {
     display: flex;
     align-items: center;
     margin-right: auto;
+}
+
+.logo:hover {
+    opacity: 0.75;
 }
 
 .logo img {
@@ -61,8 +83,4 @@ nav a {
 
 .logo div {
     margin: 2px;
-}
-
-nav a:hover {
-    opacity: 0.8;
 }
