@@ -125,7 +125,7 @@ h1 {
 }
 
 .sidebar li.hovered i {
-    color: var(--primary-green);
+    color: black;
 }
 
 .sidebar li.active {
@@ -133,7 +133,7 @@ h1 {
 }
 
 .sidebar li.active * {
-    color: var(--primary-green);
+    color: black;
 }
 
 .sidebar li.active i {
@@ -146,7 +146,7 @@ h1 {
 }
 
 .sidebar a:hover {
-    color: var(--primary-green);
+    color: black;
 }
 
 .sidebar button {
