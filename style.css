@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "Proxima Sera";
-    src: url(fonts/proximasera-regular.otf);
+    src: url(fonts/ProximaSera-Regular.otf);
 }
 
 :root {
@@ -22,21 +22,29 @@
 
 * {
     color: var(--primary-green);
+    font-family: "Proxima Sera";
+    color: var(--primary-gold);
     /* border: 2px solid red; */
 }
 
 body {
+    background-color: var(--primary-green);
     margin: 0;
 }
 
 nav {
-    font-family: "Mozaic GEO";
-    font-size: 20px;
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     gap: 24px;
-    padding: 8px 64px;
+    padding: 16px 64px;
     background-image: var(--poly-gradient);
+}
+
+nav * {
+    background-color: transparent;
+    color: var(--primary-green);
 }
 
 a {
@@ -47,6 +55,8 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Mozaic GEO";
+    font-size: 20px;
 }
 
 .nav-link::after {
@@ -54,7 +64,7 @@ a {
     height: 4px;
     width: 0%;
     background: var(--primary-green);
-    transition: width .2s;
+    transition: width 0.2s;
 }
 
 .nav-link:hover::after {
@@ -62,8 +72,6 @@ a {
 }
 
 .logo {
-    font-family: 'Begum Medium';
-    font-size: 32px;
     display: flex;
     align-items: center;
     margin-right: auto;
@@ -82,5 +90,87 @@ a {
 }
 
 .logo div {
+    font-family: 'Begum Medium';
+    font-size: 32px;
     margin: 2px;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Begum Medium';
+    margin: 48px 96px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 4px;
+    list-style-type: none;
+    border-top: 2px solid var(--primary-gold);
+    padding: 8px 0 0 0;
+    margin: 16px;
+    font-size: 20px;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.1s;
+}
+
+.sidebar li.hovered {
+    background-color: color-mix(in srgb, var(--primary-gold), transparent 20%);
+}
+
+.sidebar li.hovered i {
+    color: var(--primary-green);
+}
+
+.sidebar li.active {
+    background-color: var(--primary-gold);
+}
+
+.sidebar li.active * {
+    color: var(--primary-green);
+}
+
+.sidebar li.active i {
+    rotate: 90deg;
+}
+
+.sidebar a {
+    width: 100%;
+    padding: 8px;
+}
+
+.sidebar a:hover {
+    color: var(--primary-green);
+}
+
+.sidebar button {
+    border-width: 0;
+    border-radius: 50%;
+    padding: 0;
+    margin-left: auto;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.sidebar i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-angle-right {
+    padding: 12px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    transition: rotate 0.2s;
+}
+
+.fa-angle-right:hover {
+    rotate: 90deg;
 }
