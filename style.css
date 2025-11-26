@@ -26,17 +26,13 @@
 }
 
 * {
-    font-family: "Proxima Sera";
     color: var(--primary-gold);
-    /* border: 2px solid red; */
 }
 
 body {
     background-color: var(--primary-green);
     padding-top: 96px; /* for top-nav */
     margin: 0;
-    font-size: 20px;
-    font-family: "Usual";
 }
 
 .top-nav {
@@ -121,6 +117,8 @@ h1 {
 }
 
 .side-nav {
+    font-family: "Proxima Sera";
+    font-size: 20px;
     display: inline-block;
     margin: 16px 32px;
 }
@@ -225,6 +223,7 @@ h1 {
 }
 
 h2 {
+    font-family: "Proxima Sera";
     font-size: 48px;
 }
 
@@ -250,6 +249,7 @@ img.accreditation {
     align-items: center;
     gap: 24px;
     margin: 32px;
+    font-family: "Proxima Sera";
     font-size: 24px;
 }
 
