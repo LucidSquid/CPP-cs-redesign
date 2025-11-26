@@ -23,6 +23,7 @@
     --primary-gold: #FFB81C;
     --secondary-avocado: #A4D65E;
     --poly-gradient: linear-gradient(to right, var(--primary-gold), var(--secondary-avocado));
+    --green-check: #32cd32;
 }
 
 * {
@@ -222,6 +223,22 @@ h1 {
     flex: 2;
 }
 
+.check-green {
+    color: var(--green-check);
+}
+
+.check-green i {
+    color: var(--green-check);
+}
+
+.content a {
+    color: var(--secondary-avocado);
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
 h2 {
     font-family: "Proxima Sera";
     font-size: 48px;
@@ -230,14 +247,14 @@ h2 {
 p {
     font-family: "Usual";
     font-size: 18px;
-    line-height: 1.6;
-    margin: 32px 0;
+    line-height: 1.7;
+    margin: 48px 0;
 }
 
 img.accreditation {
     float: left;
     padding: 4px;
-    margin: 16px 16px 16px 4px;
+    margin: 16px 16px 4px 4px;
     width: 400px;
     border: 2px solid var(--primary-gold);
 }
@@ -247,7 +264,7 @@ img.accreditation {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 36px;
     margin: 32px;
     font-family: "Proxima Sera";
     font-size: 24px;
@@ -274,7 +291,7 @@ img.accreditation {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding: 16px 0;
+    padding: 32px 0;
     width: 100%;
 }
 
@@ -282,7 +299,7 @@ img.accreditation {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 16px 0;
+    padding: 32px 0;
 }
 
 .contact p {
@@ -303,4 +320,92 @@ img.accreditation {
 
 .no-content-message h2 {
     font-size: 32px;
+}
+
+.content.accreditation {
+    width: 100%;
+    padding-right: 15%;
+}
+
+.content.accreditation img {
+    width: 50%;
+    padding: 4px;
+    margin: 0 32px 16px 0;
+    float: inline-start;
+    border: 2px solid var(--green-check);
+}
+
+.content.accreditation > p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.content.accreditation > h3 {
+    font-family: "Begum Medium";
+    font-size: 32px;
+    padding: 0;
+    margin: 16px;
+}
+
+.content.accreditation > h3, .content.accreditation i {
+    color: var(--green-check);
+}
+
+.peo-so {
+    display: flex;
+    gap: 32px;
+    margin: 48px 0;
+}
+
+.peo-so > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--secondary-avocado);
+    color: var(--primary-green);
+    font-size: 28px;
+    font-family: "Usual";
+    padding: 24px;
+    border: 2px solid var(--primary-gold);
+}
+
+.peo-so > div h3 {
+    font-size: 24px;
+    text-align: center;
+    color: black;
+    margin: 4px;
+}
+
+.peo-so > div h4 {
+    font-size: 16px;
+    color: var(--primary-green);
+    margin: 0;
+}
+
+.peo-so > div p.note {
+    color: var(--primary-green);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.peo-so > div p {
+    color: black;
+    font-size: 18px;
+    margin: 32px 0 16px;
+    text-decoration: underline;
+}
+
+.peo-so > div ol {
+    margin: 0;
+}
+
+.peo-so > div li {
+    color: black;
+    font-size: 16px;
+    padding: 4px;
+}
+
+#line-chart {
+    margin: 64px 0;
 }

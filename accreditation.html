@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
 </head>
 <body>
     <div class="top-nav-bg">
@@ -28,106 +29,155 @@
 
     <h1>Computer Science</h1>
 
-    <nav class="side-nav">
-        <ul>
-            <li><a href=".">Home</a></li>
+    <div class="sidenav-and-content">
+        <nav class="side-nav">
+            <ul>
+                <li><a href=".">Home</a></li>
         
-            <li class="dropdown">
-                <a href="">Undergraduate Program</a>
-                <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
-            </li>
-            <div class="expandable">
-                <ul>
-                    <li><a href="">Courses</a></li>
-                    <li><a href="">CS Senior Project</a></li>
-                    <li><a href="">Minor in CS</a></li>
-                    <li><a href="">Minor in Data Science</a></li>
-                    <li><a href="">Undergraduate Research Opportunities</a></li>
-                    <li><a href="accreditation.html">Program Accreditation & Assessment</a></li>
-                </ul>
-            </div>
+                <li class="dropdown">
+                    <a href="">Undergraduate Program</a>
+                    <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
+                </li>
+                <div class="expandable">
+                    <ul>
+                        <li><a href="">Courses</a></li>
+                        <li><a href="">CS Senior Project</a></li>
+                        <li><a href="">Minor in CS</a></li>
+                        <li><a href="">Minor in Data Science</a></li>
+                        <li><a href="">Undergraduate Research Opportunities</a></li>
+                        <li><a href="accreditation.html">Program Accreditation & Assessment</a></li>
+                    </ul>
+                </div>
+                <li class="dropdown">
+                    <a href="">Graduate Program</a>
+                    <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
+                </li>
+                <div class="expandable">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="">Prospective Graduate Students</a>
+                            <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
+                        </li>
+                        <div class="expandable">
+                            <ul>
+                                <li><a href="">Program Information</a></li>
+                                <li><a href="">Admission Requirements</a></li>
+                                <li><a href="">Application Procedures</a></li>
+                                <li><a href="">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <li><a href="">Courses</a></li>
+                        <li><a href="">Planned Future Courses</a></li>
+                        <li><a href="">Recent Master's Theses/Projects</a></li>
+                        <li><a href="">Program Assessment</a></li>
+                    </ul>
+                </div>
+                <li class="dropdown">
+                    <a href="">Faculty & Staff</a>
+                    <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
+                </li>
+                <div class="expandable">
+                    <ul>
+                        <li><a href="">Permanent Faculty</a></li>
+                        <li><a href="">Lecturers</a></li>
+                        <li><a href="">Staff</a></li>
+                        <li><a href="">Emeritus</a></li>
+                        <li><a href="">Faculty Research Interests</a></li>
+                        <li><a href="">Faculty & Staff Awards</a></li>
+                    </ul>
+                </div>
+                <li><a href="">Alumni</a></li>
+                <li class="dropdown">
+                    <a href="">Labs</a>
+                    <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
+                </li>
+                <div class="expandable">
+                    <ul>
+                        <li><a href="">Lab Use and Hours</a></li>
+                        <li><a href="">Instructional Labs</a></li>
+                        <li><a href="">Research Labs</a></li>
+                    </ul>
+                </div>
+                <li><a href="">Clubs</a></li>
+                <li class="dropdown">
+                    <a href="">Resources</a>
+                    <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
+                </li>
+                <div class="expandable">
+                    <ul>
+                        <li><a href="">Advising Center</a></li>
+                        <li><a href="">CS Internship</a></li>
+                        <li><a href="">Scholarship Opportunities</a></li>
+                        <li><a href="">Employment Opportunities</a></li>
+                        <li><a href="">CS Supplementary Authorization (CSSA)</a></li>
+                        <li><a href="">Graduate Resources</a></li>
+                    </ul>
+                </div>
+                <li><a href="">Collaborative Partnerships</a></li>
+                <li><a href="">Support the Department</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content accreditation">
+            <h2>Program Accreditation & Assessment</h2>
+            <img src="images/abet-computing-accreditation-commission.jpg" alt="">
+            <h3><i class="fa-solid fa-circle-check"></i> Accredited</h3>
+            <p>The Computer Science Department's Bachelor of Science program has been 
+                fully accredited by the Computing Accreditation Commission of ABET since 
+                1994. Being accredited requires routine monitoring and continuous improvement 
+                of our program. This is accomplished through utilization of a comprehensive 
+                assessment plan. Please find below our objectives and outcomes, various minutes 
+                and reporting instruments, and our annual enrollment and graduation data.</p>
 
-            <li class="dropdown">
-                <a href="">Graduate Program</a>
-                <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
-            </li>
-            <div class="expandable">
-                <ul>
-                    <li class="dropdown">
-                        <a href="">Prospective Graduate Students</a>
-                        <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
-                    </li>
-                    <div class="expandable">
-                        <ul>
-                            <li><a href="">Program Information</a></li>
-                            <li><a href="">Admission Requirements</a></li>
-                            <li><a href="">Application Procedures</a></li>
-                            <li><a href="">FAQ</a></li>
-                        </ul>
+            <canvas id="line-chart"></canvas>
+
+            <div class="peo-so">
+                <div class="peo">
+                    <h3>Program Educational Objectives</h3>
+                    <h4>(PEO)</h4>
+                    <div>
+                        <p class="note">*These are broad statements that describe the career and professional
+                            accomplishments that our B.S. in Computer Science program prepares our students
+                            to achieve.</p>
+                        <p>Graduates of the program will be able to:</p>
+                        <ol>
+                            <li>Engage in the professional practice of computing with job titles such as Computer 
+                                Programmer, Software Engineer, Database Administrator, Network Administrator, Systems 
+                                Analyst, or Systems Programmer. Some will become managers.</li>
+                            <li>Pursue advanced degrees in computing or related disciplines. Some will work in the fields 
+                                of teaching and research.</li>
+                            <li>Engage in life-long learning in order to remain current in the computing profession in a 
+                                diverse and inclusive culture.</li>
+                        </ol>
                     </div>
-
-                    <li><a href="">Courses</a></li>
-                    <li><a href="">Planned Future Courses</a></li>
-                    <li><a href="">Recent Master's Theses/Projects</a></li>
-                    <li><a href="">Program Assessment</a></li>
-                </ul>
+                </div>
+                <div class="so">
+                    <h3>Student Outcomes</h3>
+                    <h4>(SO)</h4>
+                    <div>
+                        <p class="note">*These are narrow statements that describe what students are expected to know and 
+                            be able to do by the time of graduation. These relate to the skills, knowledge, and behaviors 
+                            that students acquire in their matriculation through the program.</p>
+                        <p>Graduates of the program will have an ability to:</p>
+                        <ol>
+                            <li>Analyze a complex computing problem and to apply principles of computing and other relevant 
+                                displines to identify solutions.</li>
+                            <li>Design, implement, and evaluate a computing-based solution to meet a given set of computing 
+                                requirements in the context of the program's discipline.</li>
+                            <li>Communicate effectively in a variety of professional contexts.</li>
+                            <li>Recognize professional responsibilities and make informed judgments in computing practice 
+                                based on legal and ethical principles.</li>
+                            <li>Function effectively as a member or leader of a team engaged in activities appropriate to 
+                                the program's discipline.</li>
+                            <li>Apply computer science theory and software development fundamentals to produce computing-based 
+                                solutions.</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
-
-            <li class="dropdown">
-                <a href="">Faculty & Staff</a>
-                <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
-            </li>
-            <div class="expandable">
-                <ul>
-                    <li><a href="">Permanent Faculty</a></li>
-                    <li><a href="">Lecturers</a></li>
-                    <li><a href="">Staff</a></li>
-                    <li><a href="">Emeritus</a></li>
-                    <li><a href="">Faculty Research Interests</a></li>
-                    <li><a href="">Faculty & Staff Awards</a></li>
-                </ul>
-            </div>
-
-            <li><a href="">Alumni</a></li>
-
-            <li class="dropdown">
-                <a href="">Labs</a>
-                <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
-            </li>
-            <div class="expandable">
-                <ul>
-                    <li><a href="">Lab Use and Hours</a></li>
-                    <li><a href="">Instructional Labs</a></li>
-                    <li><a href="">Research Labs</a></li>
-                </ul>
-            </div>
-
-            <li><a href="">Clubs</a></li>
-
-            <li class="dropdown">
-                <a href="">Resources</a>
-                <button><i class="fa-solid fa-angle-right fa-lg"></i></button>
-            </li>
-            <div class="expandable">
-                <ul>
-                    <li><a href="">Advising Center</a></li>
-                    <li><a href="">CS Internship</a></li>
-                    <li><a href="">Scholarship Opportunities</a></li>
-                    <li><a href="">Employment Opportunities</a></li>
-                    <li><a href="">CS Supplementary Authorization (CSSA)</a></li>
-                    <li><a href="">Graduate Resources</a></li>
-                </ul>
-            </div>
-
-            <li><a href="">Collaborative Partnerships</a></li>
-
-            <li><a href="">Support the Department</a></li>
-
-            <li><a href="">Contact Us</a></li>
-        </ul>
-    </nav>
-    
-    
+        </div>
+    </div>
 
 </body>
 </html>
