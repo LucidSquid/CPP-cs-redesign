@@ -21,7 +21,6 @@
 }
 
 * {
-    color: var(--primary-green);
     font-family: "Proxima Sera";
     color: var(--primary-gold);
     /* border: 2px solid red; */
@@ -29,20 +28,33 @@
 
 body {
     background-color: var(--primary-green);
+    padding-top: 96px; /* for top-nav */
     margin: 0;
 }
 
-nav {
-    position: sticky;
-    top: 0;
+.top-nav {
     display: flex;
     align-items: center;
     gap: 24px;
     padding: 16px 64px;
     background-image: var(--poly-gradient);
+    background-size: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 1.5s ease-in-out;
 }
 
-nav * {
+.top-nav.show-bg {
+    background-size: 100%;
+}
+
+.top-nav-bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--secondary-avocado);
+}
+
+.top-nav * {
     background-color: transparent;
     color: var(--primary-green);
 }
@@ -101,55 +113,75 @@ h1 {
     margin: 48px 96px;
 }
 
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    gap: 4px;
+.side-nav {
+    display: inline-block;
+    margin: 16px;
+}
+
+.side-nav > ul {
+    width: 284px;
     list-style-type: none;
     border-top: 2px solid var(--primary-gold);
     padding: 8px 0 0 0;
-    margin: 16px;
+    margin: 0;
     font-size: 20px;
 }
 
-.sidebar li {
+.side-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.expandable ul {
+    padding: 0 0 0 32px;
+}
+
+.expandable {
+    display: none;
+}
+
+.expandable.show {
+    display: block;
+}
+
+.side-nav li {
     display: flex;
     align-items: center;
     border-radius: 8px;
     transition: background-color 0.1s;
 }
 
-.sidebar li.hovered {
+.side-nav li.hovered {
     background-color: color-mix(in srgb, var(--primary-gold), transparent 20%);
 }
 
-.sidebar li.hovered i {
+.side-nav li.hovered i {
     color: black;
 }
 
-.sidebar li.active {
+.side-nav li.active {
     background-color: var(--primary-gold);
 }
 
-.sidebar li.active * {
+.side-nav li.active * {
     color: black;
 }
 
-.sidebar li.active i {
+.side-nav li.active i {
     rotate: 90deg;
 }
 
-.sidebar a {
+.side-nav a {
     width: 100%;
     padding: 8px;
 }
 
-.sidebar a:hover {
+.side-nav a:hover {
     color: black;
 }
 
-.sidebar button {
+.side-nav button {
     border-width: 0;
     border-radius: 50%;
     padding: 0;
@@ -158,7 +190,7 @@ h1 {
     cursor: pointer;
 }
 
-.sidebar i {
+.side-nav i {
     display: flex;
     justify-content: center;
     align-items: center;
