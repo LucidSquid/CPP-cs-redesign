@@ -27,7 +27,14 @@ sideNavDropdowns.forEach(dropdown => {
 
     button.addEventListener("click", () => {
         dropdown.classList.toggle("active");
-        dropdown.nextElementSibling.classList.toggle("show");
+    });
+});
+
+dropdownButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const expandable = button.parentElement.nextElementSibling;
+
+        expandable.classList.toggle('show');
     });
 });
 

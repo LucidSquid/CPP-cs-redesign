@@ -144,11 +144,13 @@ h1 {
 }
 
 .expandable {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
 }
 
 .expandable.show {
-    display: block;
+    max-height: 600px;
 }
 
 .side-nav li {
