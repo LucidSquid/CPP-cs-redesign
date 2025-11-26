@@ -13,6 +13,11 @@
     src: url(fonts/ProximaSera-Regular.otf);
 }
 
+@font-face {
+    font-family: "Usual";
+    src: url(fonts/Usual-Regular.otf);
+}
+
 :root {
     --primary-green: #005030;
     --primary-gold: #FFB81C;
@@ -30,6 +35,8 @@ body {
     background-color: var(--primary-green);
     padding-top: 96px; /* for top-nav */
     margin: 0;
+    font-size: 20px;
+    font-family: "Usual";
 }
 
 .top-nav {
@@ -115,7 +122,7 @@ h1 {
 
 .side-nav {
     display: inline-block;
-    margin: 16px;
+    margin: 16px 32px;
 }
 
 .side-nav > ul {
@@ -205,4 +212,80 @@ h1 {
 
 .fa-angle-right:hover {
     rotate: 90deg;
+}
+
+.sidenav-and-content {
+    display: flex;
+    gap: 32px;
+}
+
+.content {
+    margin: -48px 0 0 0;
+    flex: 2;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+p {
+    font-family: "Usual";
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 32px 0;
+}
+
+img.accreditation {
+    float: left;
+    padding: 4px;
+    margin: 16px 16px 16px 4px;
+    width: 400px;
+    border: 2px solid var(--primary-gold);
+}
+
+.side-panels {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 32px;
+    font-size: 24px;
+}
+
+.side-panels > a, .side-panels > div {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--primary-gold);
+    background-color: var(--primary-gold);
+    align-items: center;
+    width: 100%;
+}
+
+.side-panels * {
+    color: var(--primary-green);
+}
+
+.side-panels img {
+    width: 100%;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 0;
+    width: 100%;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 0;
+}
+
+.contact p {
+    font-size: 16px;
+    margin: 0;
 }

@@ -36,9 +36,9 @@ sideNavLinks.forEach((a, index) => {
         localStorage.setItem("active_link", index);
     });
 
-    // Set the href of every sidebar link to /pages/placeholder.html, except for "Home" and "Program Accreditation & Assessment"
+    // Set the href of every sidebar link to placeholder.html, except for "Home" and "Program Accreditation & Assessment"
     if (a.textContent !== "Home" && a.textContent !== "Program Accreditation & Assessment") {
-        a.href = "/pages/placeholder.html";
+        a.href = "placeholder.html";
     }
 });
 
