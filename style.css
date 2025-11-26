@@ -289,3 +289,18 @@ img.accreditation {
     font-size: 16px;
     margin: 0;
 }
+
+.no-content-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+.no-content-message img {
+    width: 32%;
+}
+
+.no-content-message h2 {
+    font-size: 32px;
+}
