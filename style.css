@@ -275,10 +275,23 @@ img.accreditation {
 .side-panels > a, .side-panels > div {
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--primary-gold);
+    border: 3px solid var(--primary-gold);
     background-color: var(--primary-gold);
     align-items: center;
     width: 100%;
+}
+
+.side-panels > a {
+    transition: background-color 0.2s
+}
+
+.side-panels > a:hover {
+    background-color: var(--primary-green);
+    color: var(--primary-gold);
+}
+
+.side-panels > a:hover i {
+    color: var(--primary-gold);
 }
 
 .side-panels * {
@@ -286,6 +299,7 @@ img.accreditation {
 }
 
 .side-panels img {
+    border: solid 2px var(--primary-gold);
     width: 100%;
 }
 
